@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your E-commerce Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+         
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #0062ff;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .hero {
+            
+            color: #fff;
+            padding: 2em;
+            width: 1151px;
+            margin-left: -8px;
+          
+        }
+
+      
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .about,
+        .services,
+        .testimonials,
+        .newsletter,
+        .contact {
+            background-color: #fff;
+            padding: 2em;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .services .service,
+        .testimonials .testimonial {
+            margin-bottom: 20px;
+        }
+
+        .newsletter form {
+            display: flex;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Add this to your existing styles.css or create a new stylesheet */
+
+        .registration {
+            background-color: #fff;
+            padding: 2em;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .registration form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .registration label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .registration input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .registration button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .slider-container {
+    position: relative;
+    width: 100%;
+
+ margin-left: 33px;
+
+    
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+
+
+.slide img {
+    width: 1377px;
+    height: 404px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.prev {
+    left: 99px;
+    margin-top: 157px;
+}
+
+.next {
+    right: 99px;
+    margin-top: 157px;
+}   
+        .registration button:hover {
+            background-color: #2980b9;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #32a0e9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #successMessage {
+            color: rgb(2, 147, 2);
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        .newsletter button:hover {
+            background-color: #e08616;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div style="display: flex; align-items: center;">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.9UbJkKEmppOpQuzHn9BX_QHaEK&pid=Api&P=0&h=220" alt="Logo"
+                    style="height: 50px;">
+                <span style="margin-left: 18px; font-size: 25px; font-weight: bold;">Shop Marto</span>
+            </div>
+
+        </div>
+        <nav>
+            <ul>
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <form action="/registerSubmit">
+                    <li><a href="#">Product Listing</a></li>
+                </form>
+                <li><a href="#form">Register Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+       
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide">
+                                <img style="height: 100vh; width: 1125px;margin-left: -22px;" src="https://neilpatel.com/wp-content/uploads/2015/04/ecommerce.jpg" alt="Image 1">
+                            </div>
+                            <div class="slide">
+                                <img style="height: 100vh; width: 1125px;margin-left: -22px;"src="https://cdn.dribbble.com/users/3713179/screenshots/9536384/media/ed9f05d7ed5b92878712ced805e97a54.png?compress=1&resize=1600x1200&vertical=top" alt="Image 1">
+                            </div>
+                            <div class="slide">
+                                <img style="height: 100vh;  width: 1125px; margin-left: -22px;" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D" alt="Image 2">
+                            </div>
+                            <div class="slide">
+                                <img style="height: 100vh;  width: 1125px;margin-left: -22px;" src="https://assets.justinmind.com/wp-content/uploads/2019/08/ecommerce-website-design.png" alt="Image 2">
+                            </div>
+                          
+                        </div>
+                        
+                    </div>
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="next" onclick="nextSlide()">&#10095;</button>
+      
+        </section>
+
+        <section class="products">
+            <div class="product">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBQVFRgSEhUYGBISGBgREhgSGBISERISGBQZGRgVGhgcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QGBESHjEhISQ2MTQxNDQ0NDE0MTY0MTQ0MTQ0MTExNDQ0NDQ/NDE0NDQ0NDQxNzQxNDQ0ND40NDE/Mf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAECBAYDBwj/xABFEAACAQIDBAcFBQYEBAcAAAABAgADEQQSIQUxQVEGEyJhcYGhMlKRsdEUFUKCwSNTYnKy8AczosI0Q9LhFiRzdJKTo//EABoBAQEBAQEBAQAAAAAAAAAAAAABAgQDBQb/xAAsEQEBAAIBAgQDCAMAAAAAAAAAAQIREgMhBDFRkUFhoQUTFBUiI3GxMjPh/9oADAMBAAIRAxEAPwD2PMIs4nCkHOr28BOwWZ3V1D5tY+cSOWLLL3OyWcRs4kcsWWTdOyL1DbSCTswEljqSbmF8sWWSzbWN0GJggOEmMPL5WNkmeDXJXSlad1WTyxWmpjpm5bISUjJTSFFIxQFEYoxg0q1abMdw7pE0m5S5EZndNQPam3KMKbchCFoxEcquoEvh3kPsz84XKxsscsl44gbtZghcZjuHGdDQfmJQ21hr1lIBvwIJGk7NhKwAIfQnjwEnLJeMdzh35yJw78xHGBrn/m+kf7vrfvfQRypxjk2FqEb7SVPDOOIPjIVcDVsSKh8JOls6oRc1T6SbpxhOri1wNdJF3dRewljFYcdVkDnNz4gwT921gLdYT42i5WHGCVDFPcGwIAtO5x7+6PjA6YF92cjLvsd86YfZjkXNVh5xurxgj9uf3R8YpR+6T+9b4xRypxjW5pG8WWMVnq8T5pKcrayeWArxg0YiMggTijWjEQHDR7yCiSywETEpjFYyLA6xrRrRjAbjHtG4x7QbK0a0exkRvhdpZYxWK0RB5xo2iF74snfEoj2jRuolJBVkyJFFk0bqD0FOpFzwlLFMEUAg3va/CEwk4bSp3psI0bofs/Ehn6pwVaxIJ3MO6W8XVRM5LCyAFtddZn9qaUFuwdgLXG8QSo/YXvq538fjLo3WjTaNJlNiddRLuAYMJlMHh72Gs1WzqFlk0brjinRTqdc1vjL1OmpUGBtroC35x8oawyDKPCXRuqWIRBmvyzeUlgsjLec9oLe/cn6yOxUGSNG6vdUvKKSyCKDa9liyxrRWhEbayeXvkLayVjARHfGUR7GRWBKx5xEd8VjEbwIqJLL3yKiS1gIr3xkBj6xCA+sbWPcxrmA2t4+sbW8lcwGN5EXvJayIveBKxisYrmLWBFQY9jGW8kbwIkGRQGTMisCQBkMQhKMO6SLSDubWvAxu1XtTYczKboerRfMzWYrZqVVCtuB4cZzOx1013aCAM2VhiT4TSYdLCV8Pgsm4yyoNjrAB7TS7XG7ON3hDdBOyNeEE0hmyi+9yfWGMptvgC8b2iwB3IAfGLY1Psb4OV262qg3uwt4WEJ4NChyEwL2TviiynnFAu3jecWIIABsdDew4wBtKtkfNmcGp+EXsLabuEA8BreSLQBtHE3Va12W3Yyrex7yI71M9JbFlKHPmFwzb9PCS3S6HCZFH9Zn8Dj+tD0gTdwRm1BWwtpHoVSCFVicumu82lNNGTGN5Ci5Ki8nrCILeS1kQTJ3MBtYryhi9tYek2SpWRWG9SwuPHlKbdK8GNeuTlbOgPjvgHLmK8Bp0twpNusXxz0yPQywnSHCtoKyebW9YBK+slcyCODZgQQRcEEEEHcQeMneArmQBN5O8hfWBK55RXPKLNFmgMGPKQqVyADkvfvkwZCsdFgQqVCUzBbG9pUwFNy/aJy2vY7pcz9m1uN51w2/ygdgg5QHjajsxCi2UkacYdV9SOUFsvabTifnAGUTV5ywlV72Mt0l7ogva3QO1MtaccTiVRSXaw1lm9pl9vXepkvoELW74Fbo9jO2QzXBZit+Ra4mvN7TE7K2YGcKDluZqcExUFCb5SRfwgDNn0ycTUPu7oSxaMCGlDCOUrOxBysAAe+E0cVCFvvgOjm2+KN1TRQCmIcAAnnM3tSr+0sTeyEi2pGu+aOuRaxF8xt3eMBVsbTR2ptT1WwDAdlr98LpkaeOqvWWmzg07FrC3C31mq60HDAggHRT43tOuJenTcU+qzFlzhkXNbXdpOrUAFVlpZs57S3VWTvIYiZyxlal0yOKxNSjUdqbABEDG/G41+UL7IrEqjnVnGY+JhipgFa7dUuYaAGxLDxGkmMGSVIULl4DcJdJvsIUzoJK8SaCPmErKAMjWQOpVhcMLEGSDRVHCqWJsFBJJ0AAG+8DyzbfRbFPUZ6dFSGc2OdENr6HRhwtOHSToXiGrH7Ph70QiBSHpq18gzX7QJN76mbNOkVB3dGdEFOomRi6DrFZblrHgDcG3drwhvCYpHzNTdXW9royOoJ1IuvHW3kIHhdToPtKxIwjE6W/aUjwN/wAfhOr9ENoJlK4Ui2rljQIXvJZt092c28ToPGUNr5WpspJF8wuuu4aiBX6IoFoKLgvYZ7cCBa1uAh68A0GFKj1q3Fii2fewBWmMxG8nTXuh1HBvyB0+AP6wHvI31krxr6wHvFeK8V4EbznXbQR67EKSN8HPUc/innl1JjdV6Y9O5TcXi8B4nFur2ViL8ZarYlkUsx0EzX3sj1smuh15WnN4jqbk43To6PT1bubafZ+Na/aNxzlOvtWzvyBM5hwScosIHxT2LTy6XWy3Mbd92+p0sdXLTQ4DaYeW3e5B1F5ktl4gra01FeoTkUWuyg3ta0+k4FjEYoWtMztB3WoHCFlKlTbW0NPQYmx4TmKJAgUNgVGNQXQrqTqO4wrh6hztp+Ij1nXCPlsxG6WldTqvnAquvdOuCHbGn92kKj24SNLFZTe26B2cm58T84pH7Sp111jwO+26rJSLJ7Q3TBYnatR6gQkC2+w33noe0aBdCqkAndfdMd/4ZqF3qEr2vZy30tMWZW9vJ64ZYzG78xPZeJOc0765C9+PZdR/ull6jAjtHVgPWVtn7PqI/WVMoHVtTsL3uWQ3/wBJlipvX+YfOXHeu/mxnZvt5CDE85wxDtpbTThf6yy0rYiaZDsRiXG5vU/WZ/aO1Ky7nYeDOP1hvGGZXarQL3RjEPVxKCo7ELmb2m3qpI1vuvNR0qru9Grh6ChqjUXNQtcJSpFG323u1iFXxJ0GuL6NYsUXqVrZjTTLTUm2eq7BKaX4ZmdR5z0KhhhSoOrHM7K71nO+pUK9tu4cAOAAA0AgfO2NoqUDu4UMxRRlLEkKCSbbh2hPU/8ACXDmnhWU2ua9bduugVT6oZ5XtBC1JLAmztewJ3onLwnrv+HTj7OO/E4lT+au/wBRA15N3Ub7AnzJt+kF403FuBeo1vzkm/mJdNYhi3u6WPMG3zvKFYXB36ZlF91zc28dfWBPaothFHFmpfHrVb9Icw4FjfmP6Fgfb7AJRTnVRfGysf0hfDMAuu+5v8SIHQzguJQu1MOpqKAzJcZwp3G2+2u+dMRiFRSxtoPXhPDNu9IatLab4qke3SYJY+y6KMrof4TY/OB7reKU9n7Vp1qaVUNlqIrgH2hcXse8bpZ69eYgKt7Jg0S7VrrlOog0V15ic3WneOno+Vc9qL+yYzBbNRWxLEk3AFgP1m22rVXq21Ew+yCRiGbgwtx3Tnzx3PJ0Y5avm3WFoGpe1lyj4zO7SOUtm36r8IbwuKA0zWEzW28Tdm466W3Wk6eH6se3dnPLtktbDTOwUcNZo2DIQzG+XQeEy3RjEhX7d1Gupmjx20qdvbGg+M7crlL2cuOONndao7SQm19RvnVMWtpiaOMGZrX1NxCGExxtrebxts7sZSS9mtw9UGWlItoID2di15wpTxiZdSAe+aZTdQVnCnTAkxjkt7QkBjk5iB2UDlFOS40cRGgRek/8UgKdYCwLW8ob15GMb8jAE0KbgkuTbKd+69xONU9pf5h84Yrg5TpwgLFPYr43+EAuZVxBlgHSVcQYAjHvpMltV9Zp9oNoZjtpPqYFvo2jNWohRcCr1jj3lpUnZfhUamfKbvbOOdcPWbJbLSqG9xpam2swHRfE9XiablSQaOJsO81cOM3+m00229thsPWTIe1SqLfTS9NhA8cxpKjQkXHAkcJ6J/hdiD9kAvbJiKgHj1dJx+s87x508ptf8O8fSo4Ko9RlFsWCAzojlGpUlYqGPate5HIHwgejbUqWRtCTUey5Ta1g7E35WkMVXAfq7H2xfTSxyEt4WFvGD8Z0hw4VGNVLOXsMwJuzKov7osp1a1gb67pHGbZpAtUzAqbIoNh1jjcUuO0o57tAN8AjXqPVqU1soSkxq1Do2Wy2XXgxJNuevIy2Mc/ucSd44m8ANthk7BpFba2vz49575LD7YZ2CBN5tvvYcT8IBHae0OwzOoCorMdx3Lck3/hv8TPA8ZXLO7nezFj431nrvTjGdVhX17T9gWO/Mbtv1tYNPGzA9O6E7UWqiKpytTtTdTrrlsrDuNh53mzKGeI7E2l1NUVBon+XUHNLDXxB1numy06+mtQMLnRrai4+osfOBWamZxOHhk7Mb3/SR+6m9/0gBnwoIsZxGz1B3CH/ALpb3/SN90N73pJpd0IpUFG8Xld8EpJNodOx29/0jfc7e/6CU2ArhAJJ8Op4Q2djN7/oI33K3v8AoIQB+zKOERoiHDsVvf8AQSJ2I3v+ggBBTtJm3G8LnYbe/wCgjfcTe/6CAHNpC4ho7Cb3/QQe+zn63qswtlDXtrv3QKvWeMUJfcT+/wCkUDaRSGY8jEWPIwI4n2W8JjekjlUBHf8AKbB2JVri2ht36TG9KVBRQTvJ/SBk6O18YgASs1iLqrGm2lyNM+4XEJYDauNqlFNRFLXDdYlM2IuRbJobi3ESjRwSuSCSABcEAe1caEnha87U6L0qaVMv7XrLMmllQey4e/jpA4vtmpmPWkMnHLkpuO8A79baQO2PFRgyoervqXYAtY62HfqJ12vhXaqaag2ZBUyqQGAZb5cx8bQbWwr52Ao5FDgJ27gKVFh7WliwHrAMHa1NayOVACU3RBSZWp5Kjob37mS35posXhOsw2IqB1Ap0XcDi46tjp8Jhdt0clRgrZuwHGmXiCF8tBfjYGaEYpfsbJnGbqqigE9o9lgBA8+xb3EsbOx70sOerKa1CbPSo1CCETtK7qWXduBA07zKmJNhCOyMKj4Y5r52r5FsbC2RLm3nA5YTpTi6Iy0aiopve1OixNzc3LISYY2FRxuMKCpSd6BJZXCKpUg+2jAA2zaG2m8SGG6M0qlVKS5u2bE3N1UasfIAz1vD0VVVRFyoihKaDcqKLKJ87xvj54bWOt2/09ul0ue6EY0M1TNWV6a2Cs3V1HAsOFhrK+BxNCi7M1Qsv4b06invOo0O71hzFNYleWhtuvxEF4hyNxtOP8576uP1ev4b5sp07xwxORaVRerS7Nnzi5NraBDuA9TMfR2SzH/Mp/8A7f8ARPTmxD+8fiZxbEv7x+Jm/wA19Mfr/wAX8N82Bp7Ae1g6M17m3XgDu9jfPUegVWph6QTEMgpkWXtHMpHs3UgEdkgbvwwI+IY8T8ZTxDG81j9pZXyn1Pw89XsCsCL8DrfhacXxKjcLzzqjtrENTTDooZFVmL9Y9NwQfZ7O9bXN+FoRw22b08yNfgL8Od59XDOZ4TKfFy5Y8bY2iYxONx47pZBB1G7hPMKeOFUdYrhxcjMrZhcXuLwlsPazZzTDnq7kMSyhFYLmuLnTvm2W8IjWmfTaDO4p0Wao1iWIKLTp2YrlZjvJIOig6C+60sUDUZ2plyKlMKzgHMoD5sozWGvZOneIBi0VpQOFq++fSMcLV/eH0gX7RWg/7LV/eH0kVw1YG+f42gESIgJCmGt2t86CBFt8EsP/ADP5B8zCzb4Jb/ifyCATtFFFAIRQYKeK4vT8lb6xdTiv3lP/AOLfWAQfcfA/KYXpi1hT7y5+AH1mqFHEDVqiFRqQEIJHEXvM/wBKaQbqidyvr/Lkzkf6TJV0zTkolvI+PH6eU5Y9yq0VO+or1j4M5RPRCfOdNpHsgefnIdIgRXWn+6pUaY/+sMfVjKiIF8WP/RT+lYukGHsQ3BlHmwJB+azphVvjB/7dP6U+sNdI8JenTb3Lsx32BII/o9YGExFINkqE3GQI/cE7Y/pYflEG4DBI9R2qVFGVKlREZlBNSxKoSSAgLuGBOhs44QzSejVRcPTdWcgqwF8wQnR+G4vfynB+jiLiHp1EznK7BVOVgyqSXLMd2nrugYzaLA5bHcCCCCCDnc218RCOyqjImcglQxqLbi2ULbu3TntHZwRgDx1XedL7tDOmHwjqNCACSOGpHD1EDVdAcS9XEOzgBUpkgfiBdlAJ1vuzcNZ6dhgM45C5+Av+k8z/AMOaBFevc3siEn+Zmt/SZ6Thz2vJv6TPy/2jlvxsl+Gnb0Z+17qNdr3PO5g7EQhV4wdiTPmYzvt0hzGcHaWGlWpOnGK5kzjWnUic6o0nvglcabEOgDEZmKGxtcMNQfhJ7Fa6FDqOI585yqaMh911b0i2Itz8Z9/wV30v4fP68/UIYfAIiCnTzKo0FmYkctSZLZmCZ0QAohs9SoXV2V1C5iKlnvuU7ramWbbv74Q10ZwqO7rUXMClyLkA2Zd9jqN2hnY8QrZuxaiIz1mpik6CqyOzqwYD9mEK9um/aNmUm+7WaHovh8VSJ64BkrftHd3z1kIUKisx1chQq6jeDrNL1KneAbai43HnKeJxKKWQjUDfbTXvgXg45x8w5yg9dURGIzZrDTU7p1w9ZH1WBZLDnGzCNkHKN1Y5QHLDuizjukerXlItTHKBMuOcFN/xP5BCPVjlOFCkA7m2tx8oFmKKKBfinPr15iLr15iTcXVPV9k+EB7VwudCAt2FyouASSpU6nS9mML1aylSAbn/ALyvlgYHGbHxFwQptpvDX9AZz2lgq1Sq1Uo/bt+FtLKFtu7p6GRBW3ceMPReuRm6sAhb5czFgqrextqRKjFUmZcZ2VJPUKCBe40S8M7T2z1dMtUuFVQuosAeA3b7zD0umCrjFqGl2agTDtd/8sMyBn9nW1r208oc6c4gZKage1Xphr8QCcw8DAxWycTSpYnOXIuEpqCjDtZkvcgnLqm/vnrdbI3XYgKNUVEawDWFA5vO7WP8onguNcmo7/iYsx/mJvf4z0jBbfcqKAGZKg6x2W2am2Qj4E5fPzgAdv07NR/iF+/2yJGlSzUyb9pWOXxa2noZHpJtFK1RGpqVRFVVFgNdL2A0Gt4+Gdylko1G7ZuUR2GmlrgeMDWdBKdnrNzWkL6XNjUP6za0T2vyn5GY/oMGs5ZSpOQG4I1Aa4t4ma+nv8m+Rn5Dx9343L5Wf0+h0p+3FGrBuJO+EahgrEmcmD3VXlZp1Z5yLTrkTbkZyq7jO5M4VTPXCd0tUsfWyIX35MrWG/RpPo9XDgEbiP0lfaQBpspNgRblxkOjZC2UbhPu+A/13+XF4j/KNRf+/KG+iz2r295GX5N/tmfDwpsLEBK6Md1yNO9GH6ztc70FBAu0R7fl8pfXaCcm9PrB2Mqhs9vxWtfwk5RrjfQ/4Kfj/tjbJJzMO+cxXXKg17Bud3K2kbBVgjMTftG+lpOUONHbRWlIbSTk3wH1j/eKcm+A+scocb6LZEa0q/eKcm+A+sQ2gnJvgPrLynqcasmcKR7T+I+U5ttBOTfAfWckxigsddbW0HKOUON9F6KU/ty9/wABFHKHG+joHizSIEeeL3cMbmK2U2PA66d8CVamOUjq6iEW1FRWuT3EHSaBxpKdSN2JZKCNtHag3LQb8zD/AGGA+lWMxr0Vp1UFna7imC9ipJUXC3tuNzbWbMGccSlxLMqlwjwzHYKqTpSqE/wo5PoJoMVhsZV6h6iu13R3FiCmoNyCBPRjhxeSq0RpLzqfdvG62w8QSbUX17gPmZrtibFdcl0YOfbPYK2ynfrc75reo1l+hStJzp93Hndbo++YXUWFvdvp4mW6OyHAA7YAJbsuiG5tfXIeU11dBeRWnJc8l4YsimzsXTZmoOQGN7FyTuFr5VUE+UIYbH49dWY3G6wpuDpyK3mloUpZp0Bec+XDLLeWMt+cbmPbtbGCxe1toD2Ed7/wU1A8yIMrbQ2o3/KceVH6T0mpRE4tREzMOj8OnPZeOXrXmt9pn8DebUR8hEMLtM/ht+dP0no3UxdTPSTCeWM9meN9b7vOTszaR/Eo8aj/AKCMNgY9vadB+eqf0no3VRdVLNTyxnscfnWBw/RarcGo6G2ugY+phnAbCyG4bU79JphRk0pTctTjAf7vb3z5ZfpLmz8EQ6tmY5SDwtp5S6yTrhVsZrd9U4wSURnEkGkTDSGX+9Irf3pJWigIRXi84x8YDExFox8ZE+MByZEtIt4yLGBLPFOWaKAbDSV4ooEHlWqY8UlHENGcxRQrgx13RPaKKEQQDlLYAtFFAoVjrukUtyiigWqMsIYop45ebccXPdOTHuiikioX7o2nKKKbiFYcpIeEUUsRMAco4SKKaiIusnRXWKKUWgYi0aKEK8V4ooEbxiYooEC0YmKKBAtObPFFKIZ4oooH/9k="
+                    alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.AiNZdiHikxViTcKJLRoKDQHaFf&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 2</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.YhhVZJdpRV-kYk1eEfLi1QHaEn&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 3</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.QJAhQp1B9j4WTEO1tmMqeQHaEo&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 4</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.tXQaubbYRZfiOBVdmQLugAHaH3&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 5</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img style="height: 25vh;"
+                    src="https://www.redsharknews.com/hubfs/Whisky%20product%20photography-jpg.jpeg" alt="Product 1">
+                <h3>Product 6</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://clippingpathsource.com/wp-content/uploads/2018/07/Product-photography-on-Wooden-Background.png"
+                    alt="Product 1">
+                <h3>Product 7</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.cIQdpNYm9Jyadq9sDlEKUgDMEy&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 8</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img style="height: 39vh;"
+                    src="https://ithemeslab.com/sitetemplate/befit/female/assets/images/price/big1.jpg" alt="Product 1">
+                <h3>Product 9</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img style="height: 40vh;"
+                    src="https://tse2.mm.bing.net/th?id=OIP.Jno_SSHusrkla9uPE0lw8QHaHa&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 10</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://s-i.huffpost.com/gen/1561726/images/o-MEN-WATCHES-facebook.jpg" alt="Product 1">
+                <h3>Product 11</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.f1GOywXOuNwLjI9NI76GawHaHa&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 12</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.E0HqFb3QUflcVW2tgRROUwHaHa&pid=Api&P=0&h=220"
+                    alt="Product 1">
+                <h3>Product 13</h3>
+                <p>Description of Product 1.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://i5.walmartimages.com/asr/78ff8e5b-5570-4eb2-8ca0-422e4a64d51e.a392ad46e96f707de61a5547318e70d1.jpeg"
+                    alt="Product 2">
+                <h3>Product 14</h3>
+                <p>Description of Product 2.</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Add more product cards as needed -->
+
+            <div  class="product">
+                <img style="height: 50vh;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovEjPNrit4q05bjYhAhKy4tUxNHEfptuMxw&usqp=CAU"
+                    alt="Product 3">
+                <h3>Product 15</h3>
+                <p>Description of Product 3.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img style="height: 45vh;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLel4s7ks488m8t5JSJYIpmPjKzro7RTcNfw&usqp=CAU"
+                    alt="Product 4">
+                <h3>Product 16</h3>
+                <p>Description of Product 4.</p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+        </section>
+
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>Fast Shipping</h3>
+                <p>We offer fast and reliable shipping services to ensure your products reach you in no time.</p>
+            </div>
+            <div class="service">
+                <h3>24/7 Customer Support</h3>
+                <p>Our customer support team is available 24/7 to assist you with any inquiries or issues.</p>
+            </div>
+            <!-- Add more services as needed -->
+        </section>
+
+        <section class="testimonials">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonial">
+                <p>"Amazing products and excellent service! Will definitely shop here again."</p>
+                <cite>John Doe</cite>
+            </div>
+            <div class="testimonial">
+                <p>"The quality of the products exceeded my expectations. Highly recommended!"</p>
+                <cite>Jane Smith</cite>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </section>
+
+        <section class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay up-to-date with our latest products and promotions by subscribing to our newsletter.</p>
+            <form>
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <section class="registration">
+            <h2>Register Now</h2>
+            <form method="post" id="form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="Contact">Contact:</label>
+                <input type="text" id="Contact" name="Contact" required>
+
+                <label for="Address">Address:</label>
+                <input type="text" id="Address" name="Address" required>
+
+                <label for="age">Gender:</label>
+                <input type="text" id="age" name="age" required>
+
+                <button type="submit" id="submit">Register</button>
+            </form>
+            <p id="successMessage"></p>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: zawwar1313@gmail.com</p>
+            <p>freelancer.com: https://www.freelancer.com/u/zain556</p>
+            <p>linkedin: https://www.linkedin.com/in/muhammad-zawwar-akram-572b36266/</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your E-commerce Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+let slideIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (index >= slides.length) {
+        slideIndex = 0;
+    } else if (index < 0) {
+        slideIndex = slides.length - 1;
+    }
+    slides.forEach((slide, i) => {
+        if (i === slideIndex) {
+            slide.style.display = 'block';
+        } else {
+            slide.style.display = 'none';
+        }
+    });
+}
+
+function prevSlide() {
+    showSlide(--slideIndex);
+}
+
+function nextSlide() {
+    showSlide(++slideIndex);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showSlide(slideIndex);
+});
+
+
+
+        const form = document.getElementById('form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const submitButton = document.getElementById('submit');
+            submitButton.innerText = 'Submitting.....';
+            submitButton.style.cursor = 'not-allowed';
+            submitButton.disabled = true;
+            const formAllInputs = {
+                name: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                Contact: document.getElementById('Contact').value,
+                Address: document.getElementById('Address').value,
+                age: document.getElementById('age').value,
+            };
+            try {
+                const response = await fetch('/Eccomerce', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body:JSON.stringify(formAllInputs),
+                });
+                if (response.ok) {
+                    const message = document.getElementById('successMessage');
+                    message.innerText = 'Successfully Submitted Your Data';
+                    setTimeout(() => {
+                        message.innerText = '';
+
+                    }, 3000);
+
+                    submitButton.innerText = 'Submit';
+                    submitButton.style.cursor = 'pointer';
+                    submitButton.disabled = false;
+                    form.reset();
+                    console.log('sucess');
+
+                } else {
+                    console.log('error');
+                }
+            } catch (error) {
+                console.error('error');
+            }
+        });
+        function message(msg) {
+            message.innerText = msg;
+            setTimeout(() => {
+                message.innerText = '';
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
