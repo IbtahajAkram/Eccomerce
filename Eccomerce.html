@@ -471,7 +471,7 @@
                 <label for="age">Gender:</label>
                 <input type="text" id="age" name="age" required>
 
-                <button type="submit" id="submit">Register</button>
+                <button onclick= " messageDumpy()" type="submit" id="submit">Register</button>
             </form>
             <p id="successMessage"></p>
         </section>
@@ -523,55 +523,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-        const form = document.getElementById('form');
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const submitButton = document.getElementById('submit');
-            submitButton.innerText = 'Submitting.....';
-            submitButton.style.cursor = 'not-allowed';
-            submitButton.disabled = true;
-            const formAllInputs = {
-                name: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value,
-                Contact: document.getElementById('Contact').value,
-                Address: document.getElementById('Address').value,
-                age: document.getElementById('age').value,
-            };
-            try {
-                const response = await fetch('/Eccomerce', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body:JSON.stringify(formAllInputs),
-                });
-                if (response.ok) {
-                    const message = document.getElementById('successMessage');
-                    message.innerText = 'Successfully Submitted Your Data';
-                    setTimeout(() => {
-                        message.innerText = '';
+        // const form = document.getElementById('form');
+        // form.addEventListener('submit', async (event) => {
+        //     event.preventDefault();
+        //     const submitButton = document.getElementById('submit');
+        //     submitButton.innerText = 'Submitting.....';
+        //     submitButton.style.cursor = 'not-allowed';
+        //     submitButton.disabled = true;
+        //     const formAllInputs = {
+        //         name: document.getElementById('username').value,
+        //         email: document.getElementById('email').value,
+        //         password: document.getElementById('password').value,
+        //         Contact: document.getElementById('Contact').value,
+        //         Address: document.getElementById('Address').value,
+        //         age: document.getElementById('age').value,
+        //     };
+        //     try {
+        //         const response = await fetch('/Eccomerce', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body:JSON.stringify(formAllInputs),
+        //         });
+        //         if (response.ok) {
+        //             const message = document.getElementById('successMessage');
+        //             message.innerText = 'Successfully Submitted Your Data';
+        //             setTimeout(() => {
+        //                 message.innerText = '';
 
-                    }, 3000);
+        //             }, 3000);
 
-                    submitButton.innerText = 'Submit';
-                    submitButton.style.cursor = 'pointer';
-                    submitButton.disabled = false;
-                    form.reset();
-                    console.log('sucess');
+        //             submitButton.innerText = 'Submit';
+        //             submitButton.style.cursor = 'pointer';
+        //             submitButton.disabled = false;
+        //             form.reset();
+        //             console.log('sucess');
 
-                } else {
-                    console.log('error');
-                }
-            } catch (error) {
-                console.error('error');
-            }
-        });
-        function message(msg) {
-            message.innerText = msg;
+        //         } else {
+        //             console.log('error');
+        //         }
+        //     } catch (error) {
+        //         console.error('error');
+        //     }
+        // });
+        // function message(msg) {
+        //     message.innerText = msg;
+        //     setTimeout(() => {
+        //         message.innerText = '';
+        //     }, 3000);
+        // }
+function messageDumpy(){
+            message.innerText = "Succssfully Your Registration";
             setTimeout(() => {
                 message.innerText = '';
-            }, 3000);
+                form.reset();
+            }, 4000);
+        }
+
         }
     </script>
 </body>
